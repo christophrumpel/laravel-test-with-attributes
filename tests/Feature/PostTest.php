@@ -14,11 +14,11 @@ it('creates hidden post', function () {
     $user = User::factory()->create();
 
     // Act
-    $user->hiddenPosts()->create(['title' => 'Hidden Podcast', 'status' => PostStatus::Draft]);
+    $user->hiddenPosts()->create(['title' => 'Hidden Post', 'status' => PostStatus::Draft]);
 
     // Assert
     assertDatabaseHas(Post::class, [
-        'title' => 'Hidden Podcast',
+        'title' => 'Hidden Post',
         'status' => PostStatus::Draft,
         'hidden' => true,
     ]);
